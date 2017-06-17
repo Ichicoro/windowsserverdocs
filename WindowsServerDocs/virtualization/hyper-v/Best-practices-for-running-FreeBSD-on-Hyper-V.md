@@ -60,7 +60,7 @@ During startup, device nodes are created as new devices are discovered. This can
 
 3. The system will continue with multi-user boot. After the boot completes, edit /etc/fstab and replace the conventional device names, with their respective labels. The final /etc/fstab will look like this:
 
-   ```
+   ```bash
    # Device                Mountpoint      FStype  Options         Dump    Pass#
    /dev/label/rootfs       /               ufs     rw              1       1
    /dev/label/swap         none            swap    sw              0       0
@@ -69,7 +69,7 @@ During startup, device nodes are created as new devices are discovered. This can
 
 4.	The system can now be rebooted. If everything went well, it will come up normally and mount will show:
    
-   ```
+   ```bash
    # mount
    /dev/label/rootfs on / (ufs, local, journaled soft-updates)
    devfs on /dev (devfs, local, mutilabel)
@@ -80,7 +80,7 @@ During startup, device nodes are created as new devices are discovered. This can
 If the virtual switch on the host is based on wireless network adapter, reduce the ARP expiration time to 60 seconds by the following command. Otherwise the networking of the VM may stop working after a while.
 
 
-```
+```bash
    # sysctl net.link.ether.inet.max_age=60
 ```
 
